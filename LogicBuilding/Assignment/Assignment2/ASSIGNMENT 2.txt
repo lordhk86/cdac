@@ -1,0 +1,506 @@
+﻿ASSIGNMENT 2
+Section 1
+class HelloWorld {
+    public  void main(String[] args) {
+       System.out.println("hello world");
+    }
+}
+ERROR:-
+Error: Main method is not static in class HelloWorld, please define the main method as:
+   public static void main(String[] args)
+This is because there is no object available at the time of starting Java runtime so defining it as static helps jvm to load the class in the memory and treat it as an entry point.
+The solution is to define main method as static 
+Sol:-
+class HelloWorld {
+    public static  void main(String[] args) {
+       System.out.println("hello world");
+    }
+}
+2.class HelloWorld {
+     static void main(String[] args) {
+       System.out.println("hello , world");
+    }
+}
+ERROR:-
+Error: Main method not found in class HelloWorld, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+This error occurs as we want main method to be accessed by jvm from anywhere 
+Solution add public access modifier to the main method 
+class HelloWorld {
+   public  static void main(String[] args) {
+       System.out.println("hello , world");
+    }
+}
+3.class HelloWorld {
+   public  static int main(String[] args) {
+       System.out.println("hello , world");
+       return 0;
+    }
+}
+ERROR:-
+Error: Main method must return a value of type void in class HelloWorld, please 
+define the main method as:
+We define the main method as returning void as program returns after the jvm terminates the runtime so there is nothing to do with the returned obj hence we use void as a part of signature to find main method in a class
+Solution define main method as returning void 
+class HelloWorld {
+   public  static void main(String[] args) {
+       System.out.println("hello , world");
+       return 0;
+    }
+}
+4.public class HelloWorld {
+   public  static void main() {
+       System.out.println("hello , world");
+    }
+}
+ERROR:-
+Error: Main method not found in class HelloWorld,
+The jvm uses the main method with String args as the entry point as it is ambiguous as it allows method overloading which may introduce multiple entry points 
+To fix this use the signature of the main method by which it identifies the main method in program 
+public class HelloWorld {
+   public  static void main(String[] args) {
+       System.out.println("hello , world");
+    }
+}
+
+
+5.public class HelloWorld {
+    
+   public  static void main(String[] args) {
+     System.out.println("public  static void main(String[] args)");
+        
+    }
+     public  static void main(int[] args){
+         System.out.println("Overloading the main method with int args[]");
+    }
+   
+}
+The programs compiles and runs without any error. But overloading the main method is of no use because. when the ‘Java’ command is invoked, JVM calls ‘public static void main(String args[])’. Hence, the String arguments are absolutely necessary to provide an entry point to your application. If we pass command line arguments, these arguments will be taken up as the elements of the ‘args’ array.
+You can have overloaded main methods with other arguments as well. It’s just that those main methods won’t be called by the JVM as the entry point.
+JVM won’t call the following even if present in the class:
+1. public static void main(int a) //not an entry point
+2. public static void main(Long long) //not an entry point
+
+
+6.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+       //int y =5; add to avoid error 
+       int x=y+10;
+       System.out.println(x);
+     
+    }
+}
+Java throws a error that it does not identify y symbol this because java is a strictly typed language so it dosent change the primitive datatype of a variable during runtime unlike python which dose so you dont have to declare variables in python solution declare variables 
+7.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+       int x="Hello";
+       System.out.println(x);
+     
+    }
+}
+
+
+Same as above java does not change data type at runtime so it doesn't allow implicit type casting like char to int and stops ambiguity 
+8.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+      System.out.println("Hello world!!" // ); to avoid error 
+     
+    }
+}
+Java:7: error: ')' expected
+      System.out.println("Hello world!!" 
+The syntax of java includes both ( and ) with ; to close the statement 
+9import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+      int class = 10;
+      System.out.println(class);
+     
+    }
+}
+It doesn't treat int class as a statement as class keyword in predefined and has syntax .that java compiler looks for in java we cannot use keywords as user variables ;
+10.import java.util.Scanner;
+public class HelloWorld {
+    public void disp(){
+        System.out.println("No paramenters");
+    }
+    public void disp(int a){
+        System.out.println("with parameters"+a);
+    }
+   public  static void main(String[] args) {
+      disp();
+      disp(5);
+     
+    }
+}
+Java throws a error as the two methods are not static so they cannot be used by just the class name you need to create a obj for method overloading in order to use it use static keyword 
+11.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+    int[] arr={1,2,3};
+    System.out.println(arr[2]);
+    }
+}
+
+
+It shows array out of bounds runtime error as the the arr defined has index only upto 2 
+12.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+     while(true){
+         System.out.println("infinite loop");
+     }
+    }
+}
+
+
+It throws program into a infinite loop as while running condition is always true and program never terminates to avoid this make sure the after derside output from the loop the terminating condition should be met 
+13.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+     double  nums = “hello”;
+System.out.println(nums);
+    }
+}
+Java dosenot let us change the primitive data type of the variable as java is a strictly typed language so the data type we define remains for the entire program 
+14.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+     String str = null;
+     System.out.println(str.length());
+    }
+}
+
+
+Throws nullpointer runtime exception this happened when we tried to use something which is referred to as null ; null is special in java as it shows the object refers to nothing 
+15import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+     int num1=10;
+     double num2=5.5;
+     int result = num1 + num2;
+     System.out.println(result);
+    }
+}
+
+
+Java throws a error for loosy conversion java is strictly typed  so when we try to store double value in int result it dosenot allow as double is 8 bytes and int is 4 bytes so there maybe information loss.
+16.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+     int num1=10;
+     double num2=num1/4;
+     System.out.println(num2);
+    }
+}
+
+
+The output is 2.0 this is expected as we are doing integer division and later storing it in a double num2
+17.public class HelloWorld {
+   public  static void main(String[] args) {
+     int a=10;
+     int b=5;
+     int result = a**b;
+     System.out.println(result);
+    }
+}
+Java throws illegal start of an expresion error as ** is not recognside in java and treats it as * multiplication operator and finds incorrect statement written 
+18.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+     int a=10;
+     int b=5;
+     int result = a+b*2;
+     System.out.println(result);
+    }
+}
+The output is 20 as java executes multiplication before addition this is called operator precedence 
+19.public class HelloWorld {
+   public  static void main(String[] args) {
+     int a=10;
+     int b=0;
+     int result = a/b;
+     System.out.println(result);
+    }
+}
+
+
+This throws an arithmetic error .as divide by 0 is undefined in maths 
+20.public class HelloWorld {
+   public  static void main(String[] args) {
+     System.out.println(“Hello world ”) 
+    }
+}
+This throws a syntax error as the java expects ; at the end of the statement but finds none 
+21.public class HelloWorld {
+   public  static void main(String[] args) {
+     System.out.println(“Hello world ”) ;
+}
+It throws a syntax error as compiler expects } to be paired but finds one missing 
+22.public class HelloWorld {
+   public  static void main(String[] args) {
+     static void dsp(){
+         System.out.println("this is inside main");
+     }
+    }
+}
+
+
+It shows illegal start of expression so i conclude method cannot be defined inside another method 
+23.public class HelloWorld {
+   public  static void main(String[] args) {
+     int value=2;
+     switch(value){
+         case 1:
+             System.out.println("1");
+        case 2:
+            System.out.println("2");
+        case 3:
+            System.out.println("3");
+        default : 
+        System.out.println("this is default");
+             
+     }
+    }
+}
+In this after 2 it prints 3 and then default as we did not provide the break statement 
+24.public class HelloWorld {
+   public  static void main(String[] args) {
+     int value=1;
+     switch(value){
+         case 1:
+             System.out.println("1");
+        case 2:
+            System.out.println("2");
+        case 3:
+            System.out.println("3");
+        default : 
+        System.out.println("this is default");
+             
+     }
+    }
+}
+Same problem occurs as before cause it treats every statement after value = 1 case as part of case 1 to avoid use break;
+25.public class HelloWorld {
+   public  static void main(String[] args) {
+     double value=2.0;
+     switch(value){
+         case 1:
+             System.out.println("1");
+        case 2:
+            System.out.println("2");
+        case 3:
+            System.out.println("3");
+        default : 
+        System.out.println("this is default");
+             
+     }
+    }
+}
+It shows loosy conversation error as we trying to use value as double while cases are int inorder to correct we can explicitly type cast value as int 
+26.public class HelloWorld {
+   public  static void main(String[] args) {
+     int value=2;
+     switch(value){
+         case 2:
+             System.out.println("1");
+             break;
+        case 2:
+            System.out.println("2");
+            break;
+        case 3:
+            System.out.println("3");
+            break;
+        default : 
+        System.out.println("this is default");
+             
+     }
+    }
+}
+It shows duplicate case label and dosenot allows duplicate cases 
+
+
+
+
+
+
+ 
+
+
+
+
+Section 2
+1.
+public class HelloWorld {
+   public  static void main(String[] args) {
+       char grade='F';
+       int score=90;
+       if(score>=90){
+           grade='A';
+       }
+       else if(score>=80 && score <=89 ){
+           grade='B';
+       }
+       else if(score>=70 && score <= 79){
+           grade='C';
+       }
+       else if(score>=60 && score <= 69){
+           grade='D';
+       }
+       else if(score<60){
+           grade='F';
+       }
+       System.out.println(grade);
+    }
+}
+2.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      int a = input.nextInt();
+      int count =0;
+      if(a>5){
+          count +=1;
+      }
+      switch(count){
+          case 0:
+              System.out.println("weekday");
+              switch(a){
+                  case 1:
+              System.out.println("Monday");
+              break;
+         case 2:
+              System.out.println("Tuesday");
+              break;
+        case 3:
+              System.out.println("Wednesday");
+              break; 
+        case 4:
+              System.out.println("Thursday");
+              break; 
+        case 5:
+              System.out.println("Friday");
+              break; 
+              }
+              break;
+              
+         case 1:
+              System.out.println("weekend");
+              switch(a){
+                  case 6:
+              System.out.println("Saturday");
+              break;
+        case 7:
+              System.out.println("Sunday");
+              break;
+      }
+              }
+        
+    }
+}
+
+
+
+
+3.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose an operation:");
+        System.out.println("1. Add");
+        System.out.println("2. Sub");
+        System.out.println("3. Multi");
+        System.out.println("4. Divi");
+        int choice = scanner.nextInt();
+
+
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+
+
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
+
+
+        switch (choice) {
+            case 1:
+                System.out.println(num1 + num2);
+                break;
+            case 2:
+                System.out.println(num1 - num2);
+                break;
+            case 3:
+                System.out.println(num1 * num2);
+                break;
+            case 4:
+                if (num2 != 0) {
+                    System.out.println(num1 / num2);
+                } else {
+                    System.out.println("Division by zero is not allowed.");
+                }
+                break;
+            default:
+                System.out.println("Invalid choice.");
+        }
+    }
+}
+4.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+     double purchase = 909.0 ; 
+     int mem = 0;
+     double result=0;
+     double rate=0;
+     if(purchase >= 1000){
+          rate=.2;
+     }
+     else if(purchase >= 500 && purchase <= 999){
+         rate=0.1;
+     }
+     else if (purchase < 500){
+         rate =0.05;
+     }
+     if(mem>0){
+         System.out.println(purchase*rate);
+     }
+     else{
+         rate=rate+0.5;
+         System.out.println(purchase*rate);
+     }
+     
+    }
+}
+
+
+5.import java.util.Scanner;
+public class HelloWorld {
+   public  static void main(String[] args) {
+     int m1=45;
+     int m2=55;
+     int m3=35;
+     int count =0;
+     if(m1<40){
+         count +=1;
+     }
+     if(m2<40){
+            count +=1;
+         }
+          if (m3<40){
+                 count +=1;}
+    
+     switch(count){
+         case 0:
+             System.out.println("PASS");
+             break;
+             default :
+             System.out.println(count);
+             break;
+            
+         
+     }   
+    }
+}
