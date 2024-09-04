@@ -4,9 +4,9 @@ class HelloWorld {
             for(int j=0;j<6-i;j++){
                 System.out.print(" ");
             }
-            for(int z =0;z<i;z++){
+            for(int z =0;z<i*2-1;z++){
                 
-            if(z==0||z==i-1||i==6){
+            if(z==0||z==i*2-2||i==6){
             System.out.print("* ");}
             else 
             System.out.print("  ");
