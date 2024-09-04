@@ -7,6 +7,8 @@ class HelloWorld {
             }
             for(int z =0;z<i*2-1;z++){
             System.out.print(a);
+                if(a=='Y')
+                    System.out.print(++a);
             a++;
             }
         System.out.println("");     
