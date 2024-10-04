@@ -81,9 +81,17 @@ class LinkedList{
             Node p=null; int carry=0;int g=0;
             while(n!=null&&s!=null){
                 if(n.data+s.data+carry>9){
-                    g=carry;
+                    if(n.next==null){
+                          g=carry;
                     carry=(n.data+s.data+carry)/10;
                     n.data=(n.data+s.data+g)%10;
+                    Node o=new Node(carry);
+                    n.next=o;
+                    }
+                    else{
+                    g=carry;
+                    carry=(n.data+s.data+carry)/10;
+                    n.data=(n.data+s.data+g)%10;}
                 }
                 else{
                     n.data+=s.data+carry;
@@ -95,8 +103,8 @@ class LinkedList{
 }
 public class HelloWorld {
     public static void main(String[] args) {
-        LinkedList l=new LinkedList();LinkedList s=new LinkedList();s.insert(2);s.insert(4);s.insert(6);
-        l.insert(5);l.insert(6); l.insert(4);s.add(s.head,l.head);s.display();
+        LinkedList l=new LinkedList();LinkedList s=new LinkedList();s.insert(9);s.insert(9);s.insert(9);
+        l.insert(1);l.insert(0); l.insert(0);s.add(s.head,l.head);s.display();
       
     }
 }
