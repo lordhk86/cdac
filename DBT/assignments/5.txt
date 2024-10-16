@@ -1,0 +1,10 @@
+1.) select * from odrders where amt>100;
+2.)  select sname ,city from salespeople where city="london" and comm>.10;
+3.)  select * from customers where rating>100 or city = "rome";
+4.) What will be the output from the following query? 
+ 
+ Select * from Orders 
+ where (amt < 1000 OR 
+ NOT (odate = ‘1990-10-03’ 
+ AND cnum > 2003));      // this query returns all rows from orders table order amount is less then 1000 or  oderdate is not equal to october 3 1990 and cnum is less than 2003 
+ 5.) select snum, sname, city, comm From salespeople where comm between .22 and .14 ; 
