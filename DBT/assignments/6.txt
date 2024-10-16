@@ -1,0 +1,4 @@
+1.) select * from odrders where odate in ("1990-10-4","1990-10-3");  and select * from odrders where odate = "1990-10-3" or odate = "1990-10-4";
+2.) select c.cname , s.sname from customers  c, salespeople s where s.snum=c.snum and s.sname = "peel" or s.sname = "
+motika";
+3.) select cname from customers where cname like "A%" or cname like "G%";
