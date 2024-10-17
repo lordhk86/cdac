@@ -2,3 +2,4 @@
 2.) select c.cname , s.sname from customers  c, salespeople s where s.snum=c.snum and s.sname = "peel" or s.sname = "
 motika";
 3.) select cname from customers where cname like "A%" or cname like "G%";
+5.) select * from odrders where ifnull(amt,0) != 0;
