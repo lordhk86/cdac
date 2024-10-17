@@ -1,0 +1,6 @@
+1.)select * from odrders where odate = ('1990-10-03');
+2.)select count( distinct city ) from customers where city is not null;
+3.) select min(amt) from odrders;
+4.)select distinct cname from customers where cname like "G%";
+5.)select city,max(rating) from customers group by city;
+6.)select count(distinct snum) , ifnull(odate,"default")  from odrders group by odate;
