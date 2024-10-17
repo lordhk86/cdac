@@ -1,0 +1,3 @@
+select onum , cname from odrders , customers where customers.cnum=odrders.cunm;
+select sname , cname , onum from odrders , salespeople , customers where salespeople.snum=odrders.snum and salespeople.snum=customers.snum ;
+select cname,sname,comm from customers , salespeople where salespeople.snum=customers.snum and comm > .12;
