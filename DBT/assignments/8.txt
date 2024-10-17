@@ -1,0 +1,4 @@
+1.)select onum ,snum,amt*.12 "commission" from odrders;
+2.) select concat("for the " , city) , concat("the highest rating is: ",max(rating)) from customers group by city;
+3.)select rating ,cname,cnum from customers order by rating desc;
+4.)select sum(amt) , odate from odrders group by odate order by odate desc;
