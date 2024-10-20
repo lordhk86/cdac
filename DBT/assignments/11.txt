@@ -1,0 +1,3 @@
+select * from odrders where cunm = (select cnum from customers where cname = "cisneros");
+select cname , rating from customers where cnum in(select cunm from odrders where amt > (select avg(amt) from odrders) );
+select sum(amt),snum from odrders group by snum having sum(amt) > (select max(amt) from odrders);
