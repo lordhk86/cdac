@@ -1,3 +1,4 @@
 select cname from customers where rating >=any(select c.rating from customers c , salespeople s where s.snum = c.snum and s.sname = "serres");
  select sname from salespeople where city <> any(select s.city from customers c,salespeople s where s.snum=c.snum);
  select onum from odrders where amt > (select min(amt) from odrders o , customers c where c.cnum = o.cunm and c.city = "london");
+select onum from odrders where amt >any(select amt from odrders o , customers c where c.cnum = o.cunm and c.city = "london");
