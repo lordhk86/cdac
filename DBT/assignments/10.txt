@@ -1,0 +1,3 @@
+select  c1.cname, c2.cname from customers c1 , customers c2 where c1.city=c2.city and c1.cname < c2.cname order by c1.cname desc;
+select c1.cname ,c1.city from customers c1 ,customers c2 where c1.rating = c2.rating and c2.cname = "Hoffman" and c1.cname != "Hoffman";
+
