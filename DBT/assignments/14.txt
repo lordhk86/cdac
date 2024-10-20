@@ -1,0 +1,4 @@
+1)insert into salespeople(city,sname,comm,snum) values("san jose","Blanco",null,1100);
+2)delete from odrders where cunm = (select cnum from customers where cname = "Clemens");
+3)update customers set rating = rating+100 where city = "Rome";
+4)update customers set snum = (select snum from salespeople where sname = "Motika") where snum = (select snum from salespeople where sname = "Serres");
