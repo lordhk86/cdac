@@ -1,0 +1,5 @@
+select onum,amt,odate from odrders;
+select * from salespeople where snum = 1001;
+select city,sname,snum,comm from salespeople;
+select rating,cname from customers where city = "San Jose";
+select distinct snum from odrders;

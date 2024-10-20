@@ -1,0 +1,2 @@
+1 yes it dose recognize date as a data type 
+2 dml is used to insert data into the table which is data manupilation language 
