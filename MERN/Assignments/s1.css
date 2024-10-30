@@ -1,0 +1,54 @@
+body {
+    height: 100vh;
+    background-image:url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages6.fanpop.com%2Fimage%2Fphotos%2F44700000%2Fgod-of-war-ragnarok-god-of-war-44709086-3840-2160.jpg&f=1&nofb=1&ipt=1642382cff20a661c563a10d9cf653bfdae62d50e2fd6e567698b98bc6ed1a72&ipo=images");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h2 {
+    text-align: center;
+}
+
+.section {
+    width: 400px;
+    height: 250px;
+    margin: 200px auto;
+    padding: 20px;
+    opacity: 90%;
+    border-radius: 5%;
+    border: 1px solid;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: 100;
+    width: 70%;
+    margin-left:3px;
+    text-align:center;
+}
+
+a {
+    font-weight: 200;
+    color: rgb(100, 44, 230);
+    text-decoration: none;
+}
+
+button {
+    width: 30%;
+    margin-left:130px;
+    background: white;
+    border-radius:5px;
+    cursor: pointer;
+    transition: background 0.5s;
+
+}
+
+button:hover {
+    background: blueviolet;
+    color: white;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            display: block;
+            height: 250px;
+            width: 350px;
+            margin: 100px auto;
+            border: 2px black solid;
+        }
+
+        input {
+            margin: 20px 60px;
+        }
+
+        button {
+            margin-left: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <form onsubmit="ev(event)">
+            <input type="text" placeholder="enter your name" id="name">
+            <input type="email" placeholder="enter your email id" id="email">
+            <input type="text" placeholder="enter your number" id="number">
+            <button type="submit">click me</button>
+        </form>
+    </div>
+    <div id="output"></div>
+    <script>
+        function ev(event) {
+            event.preventDefault();
+            var a = document.getElementById("name").value;
+            var b = document.getElementById("email").value;
+            var c = document.getElementById("number").value;
+            var d = document.getElementById("output").innerHTML = `<p>Name :${a}</p>
+             <p>Email :${b}</p><p>Number :${c}</p>`;
+            d.style.margin = "150";
+        }
+    </script>
+</body>
+
+</html>

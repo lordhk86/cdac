@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>[<a href="#" onmouseover="ev()">if you hover over this </a>]</p>
+    <p id="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit magni laborum in facere beatae ipsa iure, quasi
+        ducimus. Consequuntur, consectetur ut excepturi ex explicabo reiciendis architecto repellat repudiandae voluptas
+        blanditiis.
+
+    </p>
+    <script>
+        function ev() {
+            var e = document.getElementById('content');
+            e.innerHTML = "<strong style='color: green;'>Lorem</strong> ipsum dolor sit <strong style='color: red;'>amet</strong> consectetur adipisicing elit. Odit magni laborum in facere beatae ipsa iure, quasiducimus. Consequuntur, consectetur ut excepturi ex explicabo reiciendis architecto repellat repudiandae voluptas blanditiis";
+
+        }
+    </script>
+</body>
+
+</html>
